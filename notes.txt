@@ -1,1 +1,140 @@
+#updates:
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 
+#install snapd and retroarch:
+sudo apt install snapd -y
+sudo reboot
+sudo snap install retroarch -y
+
+enable exfat
+sudo apt-get install exfat-fuse -y
+
+#Start retroarch in fullscreen:
+retroarch -f
+
+sudo apt install vim -y
+
+https://retropie.org.uk/docs/Manual-Installation/
+
+#add this line to .bashrc to autostart retroarch
+vim .bashrc
+retroarch -f
+
+
+in retroarch:
+Online Updater -> Update Assets
+Online Updater -> Core Downloader > [choose cores here to download]
+Big Plus Icon > Scan Directory > [choose rom directory]
+Gear Icon > input > menu controls > Menu Swap [on]
+Gear Icon > input > menu controls > Hotkeys > Menu Toggle Gamepad Combo > [start + select]
+IF you have an extra button on your controller like on the 8bitdo, have a dedicated hotkey:
+Gear Icon > input > menu controls > Hotkeys > Hotkey Enable > [choose the button for hotkey]
+gear icon > video > scaling > integer scale > [on]
+gear icon > video > 
+	vertical sync [on]
+	vertical sync swap int [1]
+	frame delay [0]
+	hard gpu [off]
+	synct to exact [off]
+gear icon > video > black frame insertion > [off]
+
+
+Raspberry Pi OS 
+Choose Auto logon, during OS install.
+disable screen blanking
+Menu > Preferences > Raspberry Pi Configuration > Display > Screen Blanking > [disable]
+
+sudo raspi-config
+system options > audio [select hdmi if needed]
+display > composite video > v1 enable 4k60
+display > screen blanking > [off]
+performance > gpu memory > [128]
+advanced options > gl > [gl fake kms]
+advanced options > compositer > [no]
+
+
+#Argon one shutdown script:
+https://github.com/okunze/Argon40-ArgonOne-Script
+
+auto backup script
+my_date=$(date +'%Y-%m-%d')
+cd /media/pi/LAKKA/rasp_pi_retroarch_conf_backups/
+cp -r "/home/pi/snap/retroarch/427/.config/retroarch" "retroarch_$my_date"
+
+
+autostart the script
+In my scripts folder there is a pi_gaming dir.  This is not exact instructions.
+
+
+If you break something and need a terminal only, after it boots to desktop, you can press ctrl + alt and then F1(or F2, F3...) F7 is the desktop
+
+Audio headphone jack to low
+In terminal type "alsamixer"
+select the headphone jack, raise it up till you barely see red.
+Press escape to exit.
+
+Playstation Sound stutters
+Play crash bandicoot
+the first level you should eventually hear the stutters
+Fix this by opening the menu, while game is running.
+Options > Threaded Rendering > async
+
+
+
+
+
+Does it bug you that sometimes your Pi will show a blank screen after a period of inactivity, which can only be undone by touching the keyboard? Use your editor of choice to modify /etc/rc.local and put the line setterm -blank 0 before the last line that says exit 0.
+
+NES: FCEUmm.
+Genesis: Genesis Plus GX. If you get slowdown, try PicoDrive.
+32X: PicoDrive.
+SNES: Snes9x Next. If you get slowdown, try CATSFC.
+
+
+
+https://gist.github.com/ematysek/fc01a47c7d34f0ca4dad41226c53ff6e
+
+Online Updater -> Update Assets
+
+snes9x2010
+mupen64plus-libretro
+
+mupen64plus-libretro-next
+
+pcsx_rearmed
+
+
+RetroPie
+reverse ok and cancel buttons
+Manage packages > Manage core packages > emulationstation > Configurations/Options > Swap A/B Buttons in ES
+or
+You're looking for es_swap_a_b = 1 found in /opt/retropie/configs/all/autoconf.cfg.
+set R2 and L2 in the retroarch menu (do this after all other binds)
+
+ retroarch >  [back button till at top of menu] settings > configuration > Save configuration on exit > [on]
+
+
+change to XMB in retroarch during a game playing (select + X)
+  retroarch > [back button till at top of menu] settings > drivers > Menu > [xmb]
+
+If you run into issues where things don't save:
+Save that by Configuration
+  retroarch > [back button till at top of menu] > configuration file > Save current 
+
+if psx L2 and L2 still don't save, try these 1 at a time:
+settings > configuration > save config on exit > [on]
+settings > input > port 1 binds > save autoconfig
+
+Also, if you want to turn off run ahead mode for only the psx, or maybe your tired of L2 and R2 not saving, you could try to:
+settings > configuration > Use Global core options file > [off]
+
+
+configs:
+/opt/retropie/configs/psx/retroarch.cfg
+/opt/retropie/configs/all/retroarch.cfg
+
+
+https://forums.libretro.com/t/share-installing-retroarch-on-raspbian-pi-4-with-image-raspberry-pi-os/30372/2
+https://github.com/valrak/guides/blob/master/pi4_pcsx_rearmed_retroarch.md
