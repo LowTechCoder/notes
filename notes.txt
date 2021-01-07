@@ -140,3 +140,4 @@ https://forums.libretro.com/t/share-installing-retroarch-on-raspbian-pi-4-with-i
 https://github.com/valrak/guides/blob/master/pi4_pcsx_rearmed_retroarch.md
 
 https://buildbot.libretro.com/nightly/linux/armhf/2020-08-22_cores/pcsx_rearmed_libretro.so.zip
+https://buildbot.libretro.com/nightly/linux/armv7-neon-hf/latest/
