@@ -50,6 +50,16 @@ Menu > Preferences > Screensaver
 
 Configure Retroarch!
 
+The default set of downloadable cores are ok, but the Playstation core isn't the best, since it only offers lower resolutins.  
+To fix this we need to open a terminal and edit this file and change the URL:
+The '427' may be a different number for you.  Also, use your favorite editor instead of vim.
+vim snap/retroarch/427/.config/retroarch/retroarch.cfg
+Find the line that starts with:
+core_updater_buildbot_cores_url=
+and change that URL to:
+https://buildbot.libretro.com/nightly/linux/armv7-neon-hf/latest/
+Also, there are other URL's you can use, if you'd like to experiment with an older set of cores. Go to that URL in a web browser and browse around!
+----------
 #Start retroarch in fullscreen:
 retroarch -f
 
@@ -78,8 +88,6 @@ Settings > Input > Hotkeys > Hotkey Enable
 This is optional and you can come back to this later, but if you would like to swap the OK and Cancel buttons:
 Settings(Second icon from the left) > input > menu controls > Menu Swap OK and Cancel Buttons [on]
 
-The default set of downloadable cores are ok, but the Playstation core isn't the best, since it only offers lower resolutins.  
-To fix this we need to edit this file and change the URL:
 
 
 Main Menu(First Icon from the left) Online Updater -> Update Assets
