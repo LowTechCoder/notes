@@ -20,20 +20,16 @@ sudo apt install vim -y
 Enable exfat.  This is optional.  I like using an exfat external thumbdrive to store the Games.  I chose Exfat because it works on all OS's.
 sudo apt install exfat-fuse -y
 
-# Optional Argon One case shutdown script:
+Optional Argon One case shutdown script:
 # https://github.com/okunze/Argon40-ArgonOne-Script
 # Skip this if you don't have an Argon One Raspberry Pi 4 case.
 curl https://download.argon40.com/argon1.sh | bash
 
-Menu > Preferences > Raspberry Pi Configuration > Display 
+Desktop Menu > Preferences > Raspberry Pi Configuration > Display 
    # fixes emulation display issues
    > Composite Video [Disable]
    # this is optional, use this if your screen does something annoying when the screen loses signal.
    > Screen Blanking [Disable]
-
-If you chose to disable screen blanking, you may need a screen saver installed.  In a Terminal:
-sudo apt install xscreensaver
-
 
 # fixme! not sure yet if I need this, default may be fine.
 Menu > Preferences > Raspberry Pi Configuration > Performance > GPU Memory > [128]
@@ -41,20 +37,61 @@ Menu > Preferences > Raspberry Pi Configuration > Performance > GPU Memory > [12
 # Click OK, when done, and you will now be asked to reboot or you can type this into terminal to reboot:
 sudo reboot
 
+This is optional but if you chose to disable screen blanking, you may need a screen saver installed.  In a Terminal:
+
+sudo apt install xscreensaver -y
+
+I had to restart to use the screen saver program.
+
+sudo reboot
+
+Set the screensaver up by opening the program in:
+Menu > Preferences > Screensaver
+
+Configure Retroarch!
+
 #Start retroarch in fullscreen:
 retroarch -f
 
 #install your favorite editor
 sudo apt install vim -y
 
-retroarch -f
+Configure Retroarch. This first run will be slow.
+retroarch
+
+Change to XMB in retroarch
+Settings > Drivers > Menu > [xmb]
+Restart Retroarch
+
+Now you should be using XMB.  Lets do some more things in Retroarch.
+
+If you'd like to go ahead and go full screen, press 'f'
+
+Hopefully your controller is mostly working, so you should be able to use that now, or you can just use the keyboards up
+down left right and enter keys to get around in XMB.  If your controller isn't working go to:
+Gear Icon(settings) > input > Port 1 controls > Set All Controls
+You may have to do this a couple times if you mess up, so don't forget you do have the keyboard if you lose control with your controller.
+
+If you have a spare button on your controller you may want to asign a hotkey that will pop up the XMB during gameplay:
+Settings > Input > Hotkeys > Hotkey Enable
+
+This is optional and you can come back to this later, but if you would like to swap the OK and Cancel buttons:
+Settings(Second icon from the left) > input > menu controls > Menu Swap OK and Cancel Buttons [on]
+
+The default set of downloadable cores are ok, but the Playstation core isn't the best, since it only offers lower resolutins.  
+To fix this we need to edit this file and change the URL:
 
 
-in retroarch:
-Online Updater -> Update Assets
-Online Updater -> Core Downloader > [choose cores here to download]
+Main Menu(First Icon from the left) Online Updater -> Update Assets
+
+Main Menu > Online Updater -> Core Downloader > [choose cores here to download]
+
+My current favorite cores are: 
+snes9x current
+fcemmu
+pcsx
+
 Big Plus Icon > Scan Directory > [choose rom directory]
-Gear Icon > input > menu controls > Menu Swap [on]
 Gear Icon > input > menu controls > Hotkeys > Menu Toggle Gamepad Combo > [start + select]
 IF you have an extra button on your controller like on the 8bitdo, have a dedicated hotkey:
 Gear Icon > input > menu controls > Hotkeys > Hotkey Enable > [choose the button for hotkey]
@@ -66,6 +103,19 @@ gear icon > video >
 	hard gpu [off]
 	synct to exact [off]
 gear icon > video > black frame insertion > [off]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
