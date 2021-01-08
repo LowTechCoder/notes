@@ -141,3 +141,7 @@ https://github.com/valrak/guides/blob/master/pi4_pcsx_rearmed_retroarch.md
 
 https://buildbot.libretro.com/nightly/linux/armhf/2020-08-22_cores/pcsx_rearmed_libretro.so.zip
 https://buildbot.libretro.com/nightly/linux/armv7-neon-hf/latest/
+
+To have a core with different settings than the global settings:
+While game is running, go to Overrides > save core config
+Probably need to do this after every change.
