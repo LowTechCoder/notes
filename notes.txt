@@ -1,22 +1,27 @@
-#During Raspberry Pi OS Installation,
-#Choose Auto login, choose a password, and do anything else it asks for.
+This Guide written in Jan 2021, and is meant to be used on a fresh install of the 32bit Raspberry Pi OS Desktop, on a Raspberry Pi 4.  
 
-Connect to the internet the usual way and then I would recommend git cloneing this guide or bookmarking this page in your browser, so you'll have easy access to these instructions.
+During Raspberry Pi OS Installation,
+Choose Auto login, choose a password, and do anything else it asks for.
 
-#updates:
+Connect to the internet the usual way and then open a Terminal and update.
+
 sudo apt update
+# The '-y' automatically chooses 'yes' during package installation. We'll use it in this project to make things quicker, but be careful with this flag when installing things.
 sudo apt full-upgrade -y
+
+After you are connected to the internet and have a web browser, I would recommend git cloneing this guide or bookmarking this page in your browser, so you'll have easy access to these instructions.
 
 #install snapd and retroarch:
 sudo apt install snapd -y
 sudo snap install retroarch
 sudo apt install vim -y
 
-enable exfat
+#enable exfat.  This is optional.  I like using an exfat external thumbdrive to store the Games.  I chose Exfat because it works on all OS's.
 sudo apt install exfat-fuse -y
 
-#Optional Argon one shutdown script:
+#Optional Argon One case shutdown script:
 #https://github.com/okunze/Argon40-ArgonOne-Script
+# Skip this if you don't have an Argon One Raspberry Pi 4 case.
 curl https://download.argon40.com/argon1.sh | bash
 
 Menu > Preferences > Raspberry Pi Configuration > Display 
