@@ -15,6 +15,7 @@ Use a Terminal to install snapd and retroarch:
 
 sudo apt install snapd -y
 sudo snap install retroarch
+#install your favorite command line editor.  If your new, replace vim with nano.
 sudo apt install vim -y
 
 Enable exfat.  This is optional.  I like using an exfat external thumbdrive to store the Games.  I chose Exfat because it works on all OS's.
@@ -41,7 +42,7 @@ This is optional but if you chose to disable screen blanking, you may need a scr
 
 sudo apt install xscreensaver -y
 
-I had to restart to use the screen saver program.
+I had to restart to use the screen saver program.  Also now would be a good time to make sure you have your game controller pluged in before you restart.
 
 sudo reboot
 
@@ -58,13 +59,8 @@ Find the line that starts with:
 core_updater_buildbot_cores_url=
 and change that line to:
 core_updater_buildbot_cores_url="https://buildbot.libretro.com/nightly/linux/armv7-neon-hf/latest/"
-Also, there are other URL's you can use, if you'd like to experiment with an older set of cores. Go to that URL in a web browser and browse around!
-----------
-#Start retroarch in fullscreen:
-retroarch -f
 
-#install your favorite editor
-sudo apt install vim -y
+Also, there are other URL's you can use, if you'd like to experiment with an older set of cores. Go to that URL in a web browser and browse around!
 
 Configure Retroarch. This first run will be slow.
 retroarch
@@ -75,34 +71,70 @@ Restart Retroarch
 
 Now you should be using XMB.  Lets do some more things in Retroarch.
 
-If you'd like to go ahead and go full screen, press 'f'
+If you'd like to go full screen, press 'f' on the keyboard.
 
-Hopefully your controller is mostly working, so you should be able to use that now, or you can just use the keyboards up
-down left right and enter keys to get around in XMB.  If your controller isn't working go to:
-Gear Icon(settings) > input > Port 1 controls > Set All Controls
+Hopefully your controller is mostly working, so you should be able to use that now, or you can use the keyboard's up
+down left right and enter keys to get around in XMB.  
+
+If your controller isn't working go to:
+Settings(Second icon from the left) > input > Port 1 controls > Set All Controls
 You may have to do this a couple times if you mess up, so don't forget you do have the keyboard if you lose control with your controller.
 
-If you have a spare button on your controller you may want to asign a hotkey that will pop up the XMB during gameplay:
-Settings > Input > Hotkeys > Hotkey Enable
+If you have a spare button on your controller you may want to asign a button that will pop up the XMB during gameplay:
+Settings > Input > Hotkeys > Menu (Toggle) > [press the button]
+
+If you don't have a spare button for Menu Toggle, then do this to set a combo button press for the Menu Toggle:
+Settings > input > Hotkeys > Menu Toggle Gamepad Combo > [start + select]
 
 This is optional and you can come back to this later, but if you would like to swap the OK and Cancel buttons:
 Settings(Second icon from the left) > input > menu controls > Menu Swap OK and Cancel Buttons [on]
-
-
 
 Main Menu(First Icon from the left) Online Updater -> Update Assets
 
 Main Menu > Online Updater -> Core Downloader > [choose cores here to download]
 
-My current favorite cores are: 
-snes9x current
-fcemmu
-pcsx
+Cores I am currently using.  I'll swap these out later if I find better alternatives.
+ATARI - 2600 (STELLA 2014)
+Nintendo - Game Boy / Color (Gambatte)
+Nintendo - Game Boy Advance (gbSP)
+Nintendo - NES / Famicom (FCEUmm)
+Nintendo - SNES / SFC (Snes9x - Current)
+ScummVM
+Sega - MS/MD/CD/32x (PicoDrive)
+Sony - PlayStation (PCSX ReARMed)
 
-Big Plus Icon > Scan Directory > [choose rom directory]
-Gear Icon > input > menu controls > Hotkeys > Menu Toggle Gamepad Combo > [start + select]
-IF you have an extra button on your controller like on the 8bitdo, have a dedicated hotkey:
-Gear Icon > input > menu controls > Hotkeys > Hotkey Enable > [choose the button for hotkey]
+Add some games
+
+Import Content(Big Plus Icon) > Scan Directory > [choose rom directory]
+If your having trouble finding them, make sure you have your USB drive plugged in, and restart the Pi 4.  Then
+select the 'Parent Directory' button until you see a directory called /media.  Select /media, then /pi, then your thumbdrive, and then your games you want to import.  I would recommend importing 1 gaming console at a time.
+
+After adding all your games, press the back button on your controller many times to get back to the top level of the Retroarch menu.
+
+Play some games! fixme
+
+Audio headphone jack to low
+In terminal type "alsamixer"
+Select the headphone jack, increase the level just below red levels.
+Press escape to exit.
+
+Also, for audio, on the Raspberry Pi OS panel, there is a speaker icon you can click or right click on to adjust some volume related things.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test this stuff before using or deleting:::
+
 gear icon > video > scaling > integer scale > [on]
 gear icon > video > 
 	vertical sync [on]
@@ -112,28 +144,13 @@ gear icon > video >
 	synct to exact [off]
 gear icon > video > black frame insertion > [off]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sudo raspi-config
 system options > audio [select hdmi if needed]
 xx display > composite video > v1 enable 4k60
-display > screen blanking > [off]
+xx display > screen blanking > [off]
 xx performance > gpu memory > [128]
 xx advanced options > gl > [gl fake kms]
-advanced options > compositer > [no]
+xx advanced options > compositer > [no]
 
 
 
@@ -151,10 +168,7 @@ In my scripts folder there is a pi_gaming dir.  This is not exact instructions.
 
 If you break something and need a terminal only, after it boots to desktop, you can press ctrl + alt and then F1(or F2, F3...) F7 is the desktop
 
-Audio headphone jack to low
-In terminal type "alsamixer"
-select the headphone jack, raise it up till you barely see red.
-Press escape to exit.
+
 
 Playstation Sound stutters
 Play crash bandicoot
