@@ -48,10 +48,10 @@ Menu > Preferences > Raspberry Pi Configuration > Display > Screen Blanking > [d
 
 sudo raspi-config
 system options > audio [select hdmi if needed]
-display > composite video > v1 enable 4k60
+xx display > composite video > v1 enable 4k60
 display > screen blanking > [off]
-performance > gpu memory > [128]
-advanced options > gl > [gl fake kms]
+xx performance > gpu memory > [128]
+xx advanced options > gl > [gl fake kms]
 advanced options > compositer > [no]
 
 
