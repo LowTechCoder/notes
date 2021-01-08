@@ -1,25 +1,42 @@
+#During Raspberry Pi OS Installation,
+#Choose Auto login, choose a password, and do anything else it asks for.
+
+Connect to the internet the usual way and then I would recommend git cloneing this guide or bookmarking this page in your browser, so you'll have easy access to these instructions.
+
 #updates:
 sudo apt update
 sudo apt full-upgrade -y
-sudo reboot
 
 #install snapd and retroarch:
 sudo apt install snapd -y
-sudo reboot
-sudo snap install retroarch -y
+sudo snap install retroarch
+sudo apt install vim -y
 
 enable exfat
-sudo apt-get install exfat-fuse -y
+sudo apt install exfat-fuse -y
+
+#Optional Argon one shutdown script:
+#https://github.com/okunze/Argon40-ArgonOne-Script
+curl https://download.argon40.com/argon1.sh | bash
+
+Menu > Preferences > Raspberry Pi Configuration > Display 
+   # fixes emulation display issues
+   > Composite Video [Disable]
+   # this is optional, use this if your screen does something annoying when the screen loses signal.
+   > Screen Blanking [Disable]
+
+# fixme! not sure yet if I need this, default may be fine.
+Menu > Preferences > Raspberry Pi Configuration > Performance > GPU Memory > [128]
+
+# Click OK, when done, and you will now be asked to reboot or you can type this into terminal to reboot:
+sudo reboot
 
 #Start retroarch in fullscreen:
 retroarch -f
 
+#install your favorite editor
 sudo apt install vim -y
 
-https://retropie.org.uk/docs/Manual-Installation/
-
-#add this line to .bashrc to autostart retroarch
-vim .bashrc
 retroarch -f
 
 
@@ -41,10 +58,6 @@ gear icon > video >
 gear icon > video > black frame insertion > [off]
 
 
-Raspberry Pi OS 
-Choose Auto logon, during OS install.
-disable screen blanking
-Menu > Preferences > Raspberry Pi Configuration > Display > Screen Blanking > [disable]
 
 sudo raspi-config
 system options > audio [select hdmi if needed]
@@ -55,8 +68,8 @@ xx advanced options > gl > [gl fake kms]
 advanced options > compositer > [no]
 
 
-#Argon one shutdown script:
-https://github.com/okunze/Argon40-ArgonOne-Script
+
+
 
 auto backup script
 my_date=$(date +'%Y-%m-%d')
