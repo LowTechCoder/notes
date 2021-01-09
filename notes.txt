@@ -15,6 +15,9 @@ vim paths.conf
 change the paths to match your paths
 /media/pi/USBDRIVE/rasp_pi_retroarch_conf_backups
 
+Set retroarch to fullscreen
+Settings > Video > Fullscreen Mode > Start in Fullscreen Mode > [on]
+
 
 
 
