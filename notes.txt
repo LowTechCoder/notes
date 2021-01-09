@@ -1,3 +1,7 @@
+sudo raspi-config
+Advanced Options > Compositor > [no]
+
+
 git clone https://github.com/LowTechCoder/pi_auto_start_scripts.git
 git clone https://github.com/LowTechCoder/watch_for_dirs_to_exist.git
 cd pi_auto_start_scripts/
