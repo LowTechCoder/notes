@@ -10,6 +10,11 @@ vim autostart.bash
 change this line:
 cd /media/pi/USBDRIVE/rasp_pi_retroarch_conf_backups/
 retroarch -f will open in full screen!
+cd ~/watch_for_dirs_to_exist/
+vim paths.conf
+change the paths to match your paths
+/media/pi/USBDRIVE/rasp_pi_retroarch_conf_backups
+
 
 
 
