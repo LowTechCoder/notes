@@ -1,4 +1,15 @@
-
+git clone https://github.com/LowTechCoder/pi_auto_start_scripts.git
+git clone https://github.com/LowTechCoder/watch_for_dirs_to_exist.git
+cd pi_auto_start_scripts/
+mkdir /home/pi/.config/autostart/
+cp desktop.txt /home/pi/.config/autostart/.desktop
+cp autostart.bash ../
+cd ~
+#edit the file and see if it needs any changes to match your pi
+vim autostart.bash
+change this line:
+cd /media/pi/USBDRIVE/rasp_pi_retroarch_conf_backups/
+retroarch -f will open in full screen!
 
 
 
