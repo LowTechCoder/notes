@@ -1,4 +1,5 @@
 ---
+#vim /etc/locale.gen #may not need
 sudo echo "" > /etc/ld.so.preload
 sudo locale-gen en_US.UTF-8
 sudo update-locale en_US.UTF-8
