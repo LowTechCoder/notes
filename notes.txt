@@ -1,3 +1,11 @@
+---
+sudo echo "" > /etc/ld.so.preload
+sudo locale-gen en_US.UTF-8
+sudo update-locale en_US.UTF-8
+
+
+
+
 sudo raspi-config
 Advanced Options > Compositor > [no]
 
